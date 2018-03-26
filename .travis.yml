@@ -10,9 +10,10 @@ services:
 env:
   global:
   - REPO=kariusdx/alpine37-jre8
+  - secure: "K5Q8DHoALu/j6lzne9YrAYQ8zgNTGja/eSusHWvLp0Rc9vgqNinzfrCihEHLQ5p3nhJmEpBkxQ2giDeqMzLyeWZNLzAsdIJA73yCly6AY2Igxj5eacLkqG2XtalkmpShlO9jHVlFbjFHG7Lmjx+ilOxqpto0fkb92QX7Xgr8KG4SUzAOb07wXMdlqrZnXbw7K3t9vUGZi3a4dpnMnEwKrUiBYN/gR1sR4S6fIV02HXmnHmmJN8Ft7Ko2V/AZ8qVjyxke4Z48WI2McNBAJGJEmbsRV1hElxiyEG55qDHE7xEzm/Q/8wy8IYsR9XRF1I38Gbvm23weYg5jocBf0ZrI5hb2EVA/TlSku6cHVj/byP21tYb/uaCfnxasIq7ZRBIXAR+nsGaylW2otItPmwSmi5+Eoeef1HI9O3IvDc8rJgVK7pTdFl0xaBNRLccbj3S9iiyP85sROllyV0OT9LBrbPsLCb1w0T6lvb+pgAFKW7AFLHuvnR2O9J13I6CwPEv8QSy5MHETrhWzX2m21617seMeIJE4tahskQlwW0KczDG4ihenkZInwp1BYWPh/cOJbyw8r18DT1ez2y8VBrkFlltJ8F3KaRUkbci9SB5poVWrCd/qst0uKoyjr/r9H6ArtVjKFvRnM4+p6qfFgtvwkfmj34BI/B+416KeHOk4Liw="
 
 script:
-- docker build --tag kariusdx/$REPO:8u151 .
+- docker build --tag $REPO:8u151 .
 
 after_success:
 - docker login -u $DOCKER_USER -p $DOCKER_PASS
