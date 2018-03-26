@@ -1,0 +1,19 @@
+sudo: required
+dist: trusty
+
+services:
+- docker
+
+# To regenerate secrets, set environment variables mentioned below and:
+#   travis encrypt DOCKER_USER=$DOCKER_USER DOCKER_PASS=$DOCKER_PASS
+  
+env:
+  global:
+  - REPO=kariusdx/alpine37-jre8
+
+script:
+- docker build --tag kariusdx/$REPO:8u151 .
+
+after_success:
+- docker login -u $DOCKER_USER -p $DOCKER_PASS
+- docker push $REPO
