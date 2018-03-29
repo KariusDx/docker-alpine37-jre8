@@ -11,6 +11,8 @@ A minimal `docker` image for OpenJDK 8 Java Runtime Environment on Alpine 3.7. I
 * biscuit 0.1.3 (2016-11-09)
 * OpenJDK jre 8u151 (2017-10-17)
 
+bug: biscuit has been dropped until issues with it and Alpine have been resolved
+
 ## Usage
 
     $ sudo docker pull kariusdx/alpine37-jre8:8u151
